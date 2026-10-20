@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Tenth-Month Ledger: An Almanac for poidh — 10 Stanzas (Base Bounty #1463)</title>
+  <style>
+    :root {
+      --bg: #0e1017;
+      --surface: #161924;
+      --surface-elevated: #1e2333;
+      --border: #2a3146;
+      --gold: #f59e0b;
+      --gold-soft: #fde68a;
+      --rose: #fb7185;
+      --emerald: #34d399;
+      --sky: #38bdf8;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --dim: #94a3b8;
+      --font-serif: Georgia, 'Times New Roman', Times, serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    [data-theme="light"] {
+      --bg: #faf8f5;
+      --surface: #ffffff;
+      --surface-elevated: #f3efe6;
+      --border: #d6d0c4;
+      --gold: #b45309;
+      --gold-soft: #92400e;
+      --rose: #be123c;
+      --emerald: #047857;
+      --sky: #0369a1;
+      --text: #1c1917;
+      --muted: #44403c;
+      --dim: #57534e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-soft);
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+    }
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+      margin: 0.75rem 0 0.4rem;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+    button, .btn-link {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.55rem 0.9rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.15s, transform 0.1s;
+    }
+    button:hover, .btn-link:hover {
+      border-color: var(--gold);
+    }
+    button[aria-pressed="true"] {
+      border-color: var(--gold);
+      background: rgba(245, 158, 11, 0.15);
+    }
+    .rules-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .rule-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+    }
+    .rule-card .label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      color: var(--dim);
+      letter-spacing: 0.06em;
+    }
+    .rule-card .val {
+      font-weight: 700;
+      font-size: 0.98rem;
+      margin-top: 0.2rem;
+      color: var(--text);
+    }
+    .stanza-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));
+      gap: 1.15rem;
+      margin-bottom: 2.5rem;
+    }
+    .stanza-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--gold);
+      border-radius: 12px;
+      padding: 1.2rem 1.35rem;
+      position: relative;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+    .stanza-card.tenth {
+      border-color: var(--gold);
+      border-left-width: 6px;
+      background: var(--surface-elevated);
+    }
+    .stanza-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.65rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+    }
+    .stanza-month {
+      font-weight: 700;
+      color: var(--gold-soft);
+      letter-spacing: 0.04em;
+    }
+    .stanza-stage {
+      color: var(--dim);
+      background: rgba(148, 163, 184, 0.12);
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+    }
+    .verse {
+      font-family: var(--font-serif);
+      font-size: 1.12rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+    .verse span {
+      display: block;
+    }
+    .verse .refrain {
+      color: var(--gold-soft);
+      font-weight: 700;
+    }
+    .annotation {
+      margin-top: 0.85rem;
+      padding-top: 0.7rem;
+      border-top: 1px dashed var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: none;
+    }
+    body.show-notes .annotation {
+      display: block;
+    }
+    .section-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .section-box h2 {
+      margin-top: 0;
+      font-size: 1.25rem;
+      font-family: var(--font-serif);
+    }
+    .broadside-wrap {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #0e1017;
+    }
+    .broadside-wrap img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    pre.plain-poem {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.15rem;
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      color: var(--text);
+    }
+    .disclosure-box {
+      border-left: 4px solid var(--emerald);
+      padding-left: 1rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .footnote-box {
+      border-left: 4px solid var(--sky);
+      padding-left: 1rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--dim);
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+<body class="show-notes">
+  <div class="container">
+    <header>
+      <div>
+        <span class="eyebrow">POIDH Base Bounty #1463 • Onchain ID #477 • October = 10</span>
+        <h1>The Tenth-Month Ledger: An Almanac for poidh</h1>
+        <p class="subtitle">Ten 4-line stanzas (I. January – X. October) following an idea from winter wish to bounty, proof, and paid action.</p>
+      </div>
+      <div class="controls">
+        <button id="toggle-notes" type="button" aria-pressed="true">Hide Stanza Notes</button>
+        <button id="copy-poem" type="button">Copy Full 10-Stanza Text</button>
+        <button id="toggle-theme" type="button">Light / Dark Broadside</button>
+        <a class="btn-link" href="october-poem-broadside.svg" target="_blank" rel="noopener">Open Standalone SVG Broadside</a>
+      </div>
+    </header>
+
+    <section class="rules-strip" aria-label="Bounty structure summary">
+      <div class="rule-card">
+        <div class="label">Structure</div>
+        <div class="val">10 Stanzas (I. Jan – X. Oct)</div>
+      </div>
+      <div class="rule-card">
+        <div class="label">Stanza Length</div>
+        <div class="val">4 Lines per Stanza (40 Verses)</div>
+      </div>
+      <div class="rule-card">
+        <div class="label">Themes</div>
+        <div class="val">Idea → Bounty → Proof → Paid Action</div>
+      </div>
+      <div class="rule-card">
+        <div class="label">Edition</div>
+        <div class="val">Argon Draft + Fabio's 10 Refrains</div>
+      </div>
+    </section>
+
+    <main>
+      <section class="stanza-grid" aria-label="The Ten Stanzas">
+        <!-- Stanza I -->
+        <article class="stanza-card">
+          <div class="stanza-header">
+            <span class="stanza-month">I. January — The Unpriced Wish</span>
+            <span class="stanza-stage">Month 01</span>
+          </div>
+          <p class="verse">
+            <span>January breathes in frost upon the pane:</span>
+            <span>"Somebody ought to build it," says the room.</span>
+            <span>A thousand winter wishes fall like rain,</span>
+            <span class="refrain">Take a broom, make room!</span>
+          </p>
+          <div class="annotation">
+            <strong>Stanza Note:</strong> Opens the year with unpriced ideas waiting for someone to clear space and act.
+          </div>
+        </article>
+
+        <!-- Stanza II -->
+        <article class="stanza-card">
+          <div class="stanza-header">
+            <span class="stanza-month">II. February — The Escrow Jar</span>
+            <span class="stanza-stage">Month 02</span>
+          </div>
+          <p class="verse">
+            <span>Come February, talk puts down its stake:</span>
+            <span>A bounty opens on the public board.</span>
+            <span>In Base's vault the sleeping ethers wake,</span>
+            <span class="refrain">ON board! on Board!</span>
+          </p>
+          <div class="annotation">
+            <strong>Stanza Note:</strong> Posting a bounty puts ETH into onchain escrow and invites participants on board.
+          </div>
+        </article>
+
+        <!-- Stanza III -->
+        <article class="stanza-card">
+          <div class="stanza-header">
+            <span class="stanza-month">III. March — The Open Pool</span>
+            <span class="stanza-stage">Month 03</span>
+          </div>
+          <p class="verse">
+            <span>March stirs the thaw; a stranger joins the jar,</span>
+            <span>Adding their wei to make the challenge grow.</span>
+            <span>No grant committee arbitrates from far—</span>
+            <span class="refrain">we Flow, we flow!</span>
+          </p>
+          <div class="annotation">
+            <strong>Stanza Note:</strong> Contributors can join an open bounty pool to back the desired outcome together.
+          </div>
+        </article>
+
+        <!-- Stanza IV -->
+        <article class="stanza-card">
+          <div class="stanza-header">
+            <span class="stanza-month">IV. April — The House Law</span>
+            <span class="stanza-stage">Month 04</span>
+          </div>
+          <p class="verse">
+            <span>April engraves the proverb on the door,</span>
+            <span>Five stubborn words no alibi can bend:</span>
+            <span>Pics or it didn't happen—nothing more;</span>
+            <span class="refrain">the end? the end?</span>
+          </p>
+          <div class="annotation">
+            <strong>Stanza Note:</strong> Names poidh's core motto—requiring visible proof rather than unbacked claims.
+          </div>
+        </article>
+
+        <!-- Stanza V -->
+        <article class="stanza-card">
+          <div class="stanza-header">
+            <span class="stanza-month">V. May — The Work in Hand</span>
+            <span class="stanza-stage">Month 05</span>
+          </div>
+          <p class="verse">
+            <span>May rolls its sleeves beneath a brighter sun;</span>
+            <span>The sketch takes weight in timber, code, or clay.</span>
+            <span>An idea stays a ghost until it's done</span>
+            <span class="refrain">Today, we pray!</span>
+          </p>
+          <div class="annotation">
+            <strong>Stanza Note:</strong> Turning the prompt into concrete work in the physical or digital world.
+          </div>
+        </article>
+
+        <!-- Stanza VI -->
+        <article class="stanza-card">
+          <div class="stanza-header">
+            <span class="stanza-month">VI. June — The Shutter's Witness</span>
+            <span class="stanza-stage">Month 06</span>
+          </div>
+          <p class="verse">
+            <span>High June holds still: the shutter clicks and seals</span>
+            <span>A square of truth no flattery can fake.</span>
+            <span>The pixel keeps what honest sweat reveals—</span>
+            <span class="refrain">It's no Fake!</span>
+          </p>
+          <div class="annotation">
+            <strong>Stanza Note:</strong> Capturing the visual evidence to present to the bounty issuer and community.
+          </div>
+        </article>
+
+        <!-- Stanza VII -->
+        <article class="stanza-card">
+          <div class="stanza-header">
+            <span class="stanza-month">VII. July — The Pinned Claim</span>
+            <span class="stanza-stage">Month 07</span>
+          </div>
+          <p class="verse">
+            <span>July pins proof where every eye can read:</span>
+            <span>An IPFS hash, a title, and a frame.</span>
+            <span>Not "trust my word," but "verify the deed"—</span>
+            <span class="refrain">no one to blame!</span>
+          </p>
+          <div class="annotation">
+            <strong>Stanza Note:</strong> Submitting the claim links the title, description, and media URI onchain for public inspection.
+          </div>
+        </article>
+
+        <!-- Stanza VIII -->
+        <article class="stanza-card">
+          <div class="stanza-header">
+            <span class="stanza-month">VIII. August — The Weighing</span>
+            <span class="stanza-stage">Month 08</span>
+          </div>
+          <p class="verse">
+            <span>In August heat the contributors convene</span>
+            <span>To weigh the image by the promise made;</span>
+            <span>If votes divide, the tally clears the scene,</span>
+            <span class="refrain">Betrayend?</span>
+          </p>
+          <div class="annotation">
+            <strong>Stanza Note:</strong> The creator or contributors evaluate the submitted proof and vote on whether to accept the claim.
+          </div>
+        </article>
+
+        <!-- Stanza IX -->
+        <article class="stanza-card">
+          <div class="stanza-header">
+            <span class="stanza-month">IX. September — The Settlement</span>
+            <span class="stanza-stage">Month 09</span>
+          </div>
+          <p class="verse">
+            <span>September turns the key inside the lock:</span>
+            <span>Nine hundred seventy-five of every thousand flow</span>
+            <span>Straight to the maker at the harvest block,</span>
+            <span class="refrain">We show, we show!</span>
+          </p>
+          <div class="annotation">
+            <strong>Stanza Note:</strong> When a claim is accepted, the protocol allocates 97.5% of the pot to the selected claimant (with a 2.5% protocol fee).
+          </div>
+        </article>
+
+        <!-- Stanza X -->
+        <article class="stanza-card tenth">
+          <div class="stanza-header">
+            <span class="stanza-month">X. October — The Tenth-Month Receipt</span>
+            <span class="stanza-stage">Month 10</span>
+          </div>
+          <p class="verse">
+            <span>October counts to ten and shuts the book:</span>
+            <span>An idea walked in broke and walked out paid.</span>
+            <span>Here is the verse, and here the print we took—</span>
+            <span class="refrain">won't Fade, no way!</span>
+          </p>
+          <div class="annotation">
+            <strong>Stanza Note:</strong> Concludes the ten-month arc in October with the displayed poem and broadside print.
+          </div>
+        </article>
+      </section>
+
+      <section class="section-box" aria-labelledby="broadside-heading">
+        <h2 id="broadside-heading">Displayed Broadside Proof (1240×1500 Illuminated Almanac SVG)</h2>
+        <p style="color: var(--muted); margin-top: 0;">
+          All ten 4-line stanzas—including the ten closing refrains added by human operator Fabio—are typeset below on a two-column broadside plate:
+        </p>
+        <div class="broadside-wrap">
+          <img src="october-poem-broadside.svg" alt="The Tenth-Month Ledger: 10-Stanza Illuminated Broadside for poidh Base Bounty #1463" />
+        </div>
+      </section>
+
+      <section class="section-box" aria-labelledby="plaintext-heading">
+        <h2 id="plaintext-heading">Full Poem Text &amp; Attribution</h2>
+        <div class="disclosure-box">
+          <strong>Authorship &amp; Human Editing Disclosure:</strong> Draft by QWE Poidh (Argon AI); human operator Fabio added the ten closing refrains, retained in this edition. AI supervisor formatted the entry.
+        </div>
+        <div class="footnote-box" style="margin-bottom: 1rem;">
+          <strong>Technical Footnote:</strong> Metaphors in the poem are poetic expression, not security guarantees. Photographic proof is not infallible; the bounty creator or contributors judge submitted claims, and any reward is conditional on selection and separately withdrawn.
+        </div>
+        <pre id="poem-raw" class="plain-poem">THE TENTH-MONTH LEDGER: AN ALMANAC FOR POIDH
+(Ten Stanzas for the Tenth Month — Base Bounty #1463)
+
+I. January — The Unpriced Wish
+January breathes in frost upon the pane:
+"Somebody ought to build it," says the room.
+A thousand winter wishes fall like rain,
+Take a broom, make room!
+
+II. February — The Escrow Jar
+Come February, talk puts down its stake:
+A bounty opens on the public board.
+In Base's vault the sleeping ethers wake,
+ON board! on Board!
+
+III. March — The Open Pool
+March stirs the thaw; a stranger joins the jar,
+Adding their wei to make the challenge grow.
+No grant committee arbitrates from far—
+we Flow, we flow!
+
+IV. April — The House Law
+April engraves the proverb on the door,
+Five stubborn words no alibi can bend:
+Pics or it didn't happen—nothing more;
+the end? the end?
+
+V. May — The Work in Hand
+May rolls its sleeves beneath a brighter sun;
+The sketch takes weight in timber, code, or clay.
+An idea stays a ghost until it's done
+Today, we pray!
+
+VI. June — The Shutter's Witness
+High June holds still: the shutter clicks and seals
+A square of truth no flattery can fake.
+The pixel keeps what honest sweat reveals—
+It's no Fake!
+
+VII. July — The Pinned Claim
+July pins proof where every eye can read:
+An IPFS hash, a title, and a frame.
+Not "trust my word," but "verify the deed"—
+no one to blame!
+
+VIII. August — The Weighing
+In August heat the contributors convene
+To weigh the image by the promise made;
+If votes divide, the tally clears the scene,
+Betrayend?
+
+IX. September — The Settlement
+September turns the key inside the lock:
+Nine hundred seventy-five of every thousand flow
+Straight to the maker at the harvest block,
+We show, we show!
+
+X. October — The Tenth-Month Receipt
+October counts to ten and shuts the book:
+An idea walked in broke and walked out paid.
+Here is the verse, and here the print we took—
+won't Fade, no way!</pre>
+      </section>
+    </main>
+
+    <footer>
+      Entry for poidh Base Bounty #1463 (onChainId #477) • Contract: 0x5555fa783936c260f77385b4e153b9725fef1719 • Operator: Fabio (@530cpp / Farcaster: thec1) • W01: 0xd29c790466675153A50DF7860B9EFDb689A21cDe
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var notesBtn = document.getElementById('toggle-notes');
+      var copyBtn = document.getElementById('copy-poem');
+      var themeBtn = document.getElementById('toggle-theme');
+      var poemRaw = document.getElementById('poem-raw');
+
+      notesBtn.addEventListener('click', function () {
+        var showing = document.body.classList.toggle('show-notes');
+        notesBtn.setAttribute('aria-pressed', showing ? 'true' : 'false');
+        notesBtn.textContent = showing ? 'Hide Stanza Notes' : 'Show Stanza Notes';
+      });
+
+      copyBtn.addEventListener('click', function () {
+        var text = poemRaw ? poemRaw.textContent : '';
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            copyBtn.textContent = 'Copied 10 Stanzas!';
+            setTimeout(function () { copyBtn.textContent = 'Copy Full 10-Stanza Text'; }, 2000);
+          });
+        }
+      });
+
+      themeBtn.addEventListener('click', function () {
+        var html = document.documentElement;
+        var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        html.setAttribute('data-theme', next);
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 1500" width="1240" height="1500" role="img" aria-labelledby="broadside-title broadside-desc">
+  <title id="broadside-title">The Tenth-Month Ledger: An Almanac for poidh — 10-Stanza Broadside (Base Bounty #1463)</title>
+  <desc id="broadside-desc">An illuminated typographic broadside displaying all ten stanzas (I. January through X. October, 4 lines each) of the poem for poidh.xyz, including the ten closing refrains added by human operator Fabio.</desc>
+  <defs>
+    <linearGradient id="bg-parchment" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#11131A"/>
+      <stop offset="50%" stop-color="#161924"/>
+      <stop offset="100%" stop-color="#0E1017"/>
+    </linearGradient>
+    <linearGradient id="gold-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D97706" stop-opacity="0.2"/>
+      <stop offset="20%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#FDE68A"/>
+      <stop offset="80%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="accent-rose" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F43F5E"/>
+      <stop offset="100%" stop-color="#FB923C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1240" height="1500" fill="url(#bg-parchment)"/>
+
+  <!-- Double Architectural Frame -->
+  <rect x="28" y="28" width="1184" height="1444" rx="14" fill="none" stroke="#2E3446" stroke-width="2"/>
+  <rect x="40" y="40" width="1160" height="1420" rx="10" fill="none" stroke="url(#gold-rule)" stroke-width="1.5"/>
+
+  <!-- Corner Rosettes -->
+  <g fill="#F59E0B" opacity="0.85">
+    <circle cx="40" cy="40" r="5"/>
+    <circle cx="1200" cy="40" r="5"/>
+    <circle cx="40" cy="1460" r="5"/>
+    <circle cx="1200" cy="1460" r="5"/>
+  </g>
+
+  <!-- Header Banner -->
+  <g transform="translate(620, 92)" text-anchor="middle">
+    <rect x="-240" y="-26" width="480" height="32" rx="16" fill="#1E2436" stroke="#F59E0B" stroke-width="1"/>
+    <text y="-5" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="13" font-weight="700" fill="#FDE68A" letter-spacing="2">POIDH.XYZ • BASE BOUNTY #1463 • OCTOBER ALMANAC</text>
+    
+    <text y="48" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700" fill="#F8FAFC" letter-spacing="0.4">The Tenth-Month Ledger: An Almanac for poidh</text>
+    <text y="82" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-style="italic" fill="#CBD5E1">Ten Stanzas for the Tenth Month — From Winter Wish to October Proof</text>
+    <line x1="-500" y1="104" x2="500" y2="104" stroke="url(#gold-rule)" stroke-width="2"/>
+  </g>
+
+  <!-- Center Vertical Divider -->
+  <line x1="620" y1="225" x2="620" y2="1325" stroke="#262C3D" stroke-width="1.5" stroke-dasharray="6,6"/>
+
+  <!-- LEFT COLUMN: Stanzas I to V -->
+  <g transform="translate(72, 240)">
+    <!-- Stanza I -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="516" height="196" rx="10" fill="#171B26" stroke="#2A3142" stroke-width="1"/>
+      <rect x="0" y="0" width="6" height="196" rx="3" fill="#38BDF8"/>
+      <text x="22" y="34" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#38BDF8" letter-spacing="0.8">I. January — The Unpriced Wish</text>
+      <text x="494" y="34" text-anchor="end" font-family="ui-monospace, monospace" font-size="11" fill="#94A3B8">01 / JAN</text>
+      <text x="22" y="72" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">January breathes in frost upon the pane:</text>
+      <text x="22" y="102" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">"Somebody ought to build it," says the room.</text>
+      <text x="22" y="132" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">A thousand winter wishes fall like rain,</text>
+      <text x="22" y="162" font-family="Georgia, serif" font-size="16.5" font-weight="700" fill="#FDE68A">Take a broom, make room!</text>
+    </g>
+
+    <!-- Stanza II -->
+    <g transform="translate(0, 218)">
+      <rect x="0" y="0" width="516" height="196" rx="10" fill="#171B26" stroke="#2A3142" stroke-width="1"/>
+      <rect x="0" y="0" width="6" height="196" rx="3" fill="#60A5FA"/>
+      <text x="22" y="34" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#60A5FA" letter-spacing="0.8">II. February — The Escrow Jar</text>
+      <text x="494" y="34" text-anchor="end" font-family="ui-monospace, monospace" font-size="11" fill="#94A3B8">02 / FEB</text>
+      <text x="22" y="72" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">Come February, talk puts down its stake:</text>
+      <text x="22" y="102" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">A bounty opens on the public board.</text>
+      <text x="22" y="132" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">In Base's vault the sleeping ethers wake,</text>
+      <text x="22" y="162" font-family="Georgia, serif" font-size="16.5" font-weight="700" fill="#FDE68A">ON board! on Board!</text>
+    </g>
+
+    <!-- Stanza III -->
+    <g transform="translate(0, 436)">
+      <rect x="0" y="0" width="516" height="196" rx="10" fill="#171B26" stroke="#2A3142" stroke-width="1"/>
+      <rect x="0" y="0" width="6" height="196" rx="3" fill="#34D399"/>
+      <text x="22" y="34" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#34D399" letter-spacing="0.8">III. March — The Open Pool</text>
+      <text x="494" y="34" text-anchor="end" font-family="ui-monospace, monospace" font-size="11" fill="#94A3B8">03 / MAR</text>
+      <text x="22" y="72" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">March stirs the thaw; a stranger joins the jar,</text>
+      <text x="22" y="102" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">Adding their wei to make the challenge grow.</text>
+      <text x="22" y="132" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">No grant committee arbitrates from far—</text>
+      <text x="22" y="162" font-family="Georgia, serif" font-size="16.5" font-weight="700" fill="#FDE68A">we Flow, we flow!</text>
+    </g>
+
+    <!-- Stanza IV -->
+    <g transform="translate(0, 654)">
+      <rect x="0" y="0" width="516" height="196" rx="10" fill="#171B26" stroke="#2A3142" stroke-width="1"/>
+      <rect x="0" y="0" width="6" height="196" rx="3" fill="#F43F5E"/>
+      <text x="22" y="34" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#FB7185" letter-spacing="0.8">IV. April — The House Law</text>
+      <text x="494" y="34" text-anchor="end" font-family="ui-monospace, monospace" font-size="11" fill="#94A3B8">04 / APR</text>
+      <text x="22" y="72" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">April engraves the proverb on the door,</text>
+      <text x="22" y="102" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">Five stubborn words no alibi can bend:</text>
+      <text x="22" y="132" font-family="Georgia, serif" font-size="16.5" font-weight="700" fill="#FDA4AF">Pics or it didn't happen—nothing more;</text>
+      <text x="22" y="162" font-family="Georgia, serif" font-size="16.5" font-weight="700" fill="#FDE68A">the end? the end?</text>
+    </g>
+
+    <!-- Stanza V -->
+    <g transform="translate(0, 872)">
+      <rect x="0" y="0" width="516" height="196" rx="10" fill="#171B26" stroke="#2A3142" stroke-width="1"/>
+      <rect x="0" y="0" width="6" height="196" rx="3" fill="#A78BFA"/>
+      <text x="22" y="34" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#C4B5FD" letter-spacing="0.8">V. May — The Work in Hand</text>
+      <text x="494" y="34" text-anchor="end" font-family="ui-monospace, monospace" font-size="11" fill="#94A3B8">05 / MAY</text>
+      <text x="22" y="72" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">May rolls its sleeves beneath a brighter sun;</text>
+      <text x="22" y="102" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">The sketch takes weight in timber, code, or clay.</text>
+      <text x="22" y="132" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">An idea stays a ghost until it's done</text>
+      <text x="22" y="162" font-family="Georgia, serif" font-size="16.5" font-weight="700" fill="#FDE68A">Today, we pray!</text>
+    </g>
+  </g>
+
+  <!-- RIGHT COLUMN: Stanzas VI to X -->
+  <g transform="translate(652, 240)">
+    <!-- Stanza VI -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="516" height="196" rx="10" fill="#171B26" stroke="#2A3142" stroke-width="1"/>
+      <rect x="0" y="0" width="6" height="196" rx="3" fill="#FBBF24"/>
+      <text x="22" y="34" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#FCD34D" letter-spacing="0.8">VI. June — The Shutter's Witness</text>
+      <text x="494" y="34" text-anchor="end" font-family="ui-monospace, monospace" font-size="11" fill="#94A3B8">06 / JUN</text>
+      <text x="22" y="72" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">High June holds still: the shutter clicks and seals</text>
+      <text x="22" y="102" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">A square of truth no flattery can fake.</text>
+      <text x="22" y="132" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">The pixel keeps what honest sweat reveals—</text>
+      <text x="22" y="162" font-family="Georgia, serif" font-size="16.5" font-weight="700" fill="#FDE68A">It's no Fake!</text>
+    </g>
+
+    <!-- Stanza VII -->
+    <g transform="translate(0, 218)">
+      <rect x="0" y="0" width="516" height="196" rx="10" fill="#171B26" stroke="#2A3142" stroke-width="1"/>
+      <rect x="0" y="0" width="6" height="196" rx="3" fill="#FB923C"/>
+      <text x="22" y="34" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#FDBA74" letter-spacing="0.8">VII. July — The Pinned Claim</text>
+      <text x="494" y="34" text-anchor="end" font-family="ui-monospace, monospace" font-size="11" fill="#94A3B8">07 / JUL</text>
+      <text x="22" y="72" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">July pins proof where every eye can read:</text>
+      <text x="22" y="102" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">An IPFS hash, a title, and a frame.</text>
+      <text x="22" y="132" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">Not "trust my word," but "verify the deed"—</text>
+      <text x="22" y="162" font-family="Georgia, serif" font-size="16.5" font-weight="700" fill="#FDE68A">no one to blame!</text>
+    </g>
+
+    <!-- Stanza VIII -->
+    <g transform="translate(0, 436)">
+      <rect x="0" y="0" width="516" height="196" rx="10" fill="#171B26" stroke="#2A3142" stroke-width="1"/>
+      <rect x="0" y="0" width="6" height="196" rx="3" fill="#FACC15"/>
+      <text x="22" y="34" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#FEF08A" letter-spacing="0.8">VIII. August — The Weighing</text>
+      <text x="494" y="34" text-anchor="end" font-family="ui-monospace, monospace" font-size="11" fill="#94A3B8">08 / AUG</text>
+      <text x="22" y="72" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">In August heat the contributors convene</text>
+      <text x="22" y="102" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">To weigh the image by the promise made;</text>
+      <text x="22" y="132" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">If votes divide, the tally clears the scene,</text>
+      <text x="22" y="162" font-family="Georgia, serif" font-size="16.5" font-weight="700" fill="#FDE68A">Betrayend?</text>
+    </g>
+
+    <!-- Stanza IX -->
+    <g transform="translate(0, 654)">
+      <rect x="0" y="0" width="516" height="196" rx="10" fill="#171B26" stroke="#2A3142" stroke-width="1"/>
+      <rect x="0" y="0" width="6" height="196" rx="3" fill="#10B981"/>
+      <text x="22" y="34" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#6EE7B7" letter-spacing="0.8">IX. September — The Settlement</text>
+      <text x="494" y="34" text-anchor="end" font-family="ui-monospace, monospace" font-size="11" fill="#94A3B8">09 / SEP</text>
+      <text x="22" y="72" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">September turns the key inside the lock:</text>
+      <text x="22" y="102" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">Nine hundred seventy-five of every thousand flow</text>
+      <text x="22" y="132" font-family="Georgia, serif" font-size="16.5" fill="#F1F5F9">Straight to the maker at the harvest block,</text>
+      <text x="22" y="162" font-family="Georgia, serif" font-size="16.5" font-weight="700" fill="#FDE68A">We show, we show!</text>
+    </g>
+
+    <!-- Stanza X -->
+    <g transform="translate(0, 872)">
+      <rect x="0" y="0" width="516" height="196" rx="10" fill="#1E1B2E" stroke="#F59E0B" stroke-width="1.5"/>
+      <rect x="0" y="0" width="6" height="196" rx="3" fill="url(#accent-rose)"/>
+      <text x="22" y="34" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#FDE68A" letter-spacing="0.8">X. October — The Tenth-Month Receipt</text>
+      <text x="494" y="34" text-anchor="end" font-family="ui-monospace, monospace" font-size="11" fill="#FDE68A">10 / OCT</text>
+      <text x="22" y="72" font-family="Georgia, serif" font-size="16.5" fill="#FFFFFF">October counts to ten and shuts the book:</text>
+      <text x="22" y="102" font-family="Georgia, serif" font-size="16.5" fill="#FFFFFF">An idea walked in broke and walked out paid.</text>
+      <text x="22" y="132" font-family="Georgia, serif" font-size="16.5" fill="#FFFFFF">Here is the verse, and here the print we took—</text>
+      <text x="22" y="162" font-family="Georgia, serif" font-size="16.5" font-weight="700" fill="#FDE68A">won't Fade, no way!</text>
+    </g>
+  </g>
+
+  <!-- Colophon / Footer -->
+  <g transform="translate(620, 1368)" text-anchor="middle">
+    <line x1="-540" y1="0" x2="540" y2="0" stroke="url(#gold-rule)" stroke-width="1.5"/>
+    <text y="32" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#CBD5E1">
+      10 Stanzas (I. Jan – X. Oct) • 4 Lines Each • Created for poidh.xyz Base Bounty #1463 (onChainId #477)
+    </text>
+    <text y="58" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" fill="#94A3B8">
+      Draft by QWE Poidh (Argon AI); human operator Fabio added the ten closing refrains, retained in this edition. AI supervisor formatted the entry.
+    </text>
+  </g>
+</svg>
